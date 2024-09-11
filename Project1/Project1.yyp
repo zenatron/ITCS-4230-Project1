@@ -35,6 +35,7 @@
   "name":"Project1",
   "resources":[
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_smile","path":"sprites/spr_smile/spr_smile.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
