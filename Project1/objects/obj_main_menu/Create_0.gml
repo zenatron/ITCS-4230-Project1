@@ -6,3 +6,6 @@ show_how_to_play = false;
 show_story = false;
 show_credits = false;
 menu_locked = false;
+
+// play background music
+audio_play_sound(snd_menu_audio, 1, true);

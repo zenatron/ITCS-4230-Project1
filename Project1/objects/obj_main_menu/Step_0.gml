@@ -50,6 +50,4 @@ if (show_how_to_play or show_story or show_credits) {
 }
 
 // unlock menu once 'Enter' key is released, allowing for another press
-if (keyboard_check_released(vk_enter)) {
-    menu_locked = false;
-}
+if (keyboard_check_released(vk_enter)) { menu_locked = false; }
