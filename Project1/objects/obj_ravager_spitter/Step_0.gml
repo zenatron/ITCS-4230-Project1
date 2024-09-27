@@ -8,8 +8,10 @@ if (instance_exists(obj_player)) {
 	// check of player is within patrol range
 	if (distance_to_player < range) {
 		player_detected = true;
+		can_shoot = true;
 	} else {
 		player_detected = false;
+		can_shoot = false;
 	}
 }
 

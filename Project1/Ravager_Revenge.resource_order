@@ -19,8 +19,10 @@
   "ResourceOrderSettings":[
     {"name":"fnt_body","order":1,"path":"fonts/fnt_body/fnt_body.yy",},
     {"name":"fnt_small_body","order":2,"path":"fonts/fnt_small_body/fnt_small_body.yy",},
+    {"name":"obj_burner_fire","order":9,"path":"objects/obj_burner_fire/obj_burner_fire.yy",},
     {"name":"obj_controller","order":4,"path":"objects/obj_controller/obj_controller.yy",},
     {"name":"obj_main_menu","order":3,"path":"objects/obj_main_menu/obj_main_menu.yy",},
+    {"name":"obj_ravager_burner","order":8,"path":"objects/obj_ravager_burner/obj_ravager_burner.yy",},
     {"name":"obj_ravager_crawler","order":5,"path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},
     {"name":"obj_ravager_spitter","order":6,"path":"objects/obj_ravager_spitter/obj_ravager_spitter.yy",},
     {"name":"obj_spitter_bullet","order":7,"path":"objects/obj_spitter_bullet/obj_spitter_bullet.yy",},
@@ -28,6 +30,7 @@
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"rm_main_menu","order":1,"path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"spr_city_tiles","order":3,"path":"sprites/spr_city_tiles/spr_city_tiles.yy",},
+    {"name":"spr_fire","order":9,"path":"sprites/spr_fire/spr_fire.yy",},
     {"name":"spr_menu_background","order":2,"path":"sprites/spr_menu_background/spr_menu_background.yy",},
     {"name":"spr_ravager_boss","order":7,"path":"sprites/spr_ravager_boss/spr_ravager_boss.yy",},
     {"name":"spr_ravager_burner","order":6,"path":"sprites/spr_ravager_burner/spr_ravager_burner.yy",},

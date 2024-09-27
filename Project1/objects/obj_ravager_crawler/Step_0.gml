@@ -15,7 +15,7 @@ if (instance_exists(obj_player)) {
 // patrol state when player is NOT detected
 if (!player_detected) {
 	// move enemy left and right to patrol area
-	x += spd * patrol_direction;
+	x += speed * patrol_direction;
 	
 	// flip sprite based on direction
 	image_xscale = patrol_direction;
@@ -27,8 +27,8 @@ if (player_detected) {
     var direction_to_player = point_direction(x, y, obj_player.x, obj_player.y);
 
     // move enemy in direction of player using speed
-    x += lengthdir_x(spd, direction_to_player);  // move along x-axis
-    y += lengthdir_y(spd, direction_to_player);  // move along y-axis
+    x += lengthdir_x(speed, direction_to_player);  // move along x-axis
+    y += lengthdir_y(speed, direction_to_player);  // move along y-axis
 
     // flip sprite based on horizontal direction
     if (obj_player.x > x) {
