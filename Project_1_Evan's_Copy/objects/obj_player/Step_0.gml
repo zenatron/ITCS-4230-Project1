@@ -1,21 +1,35 @@
 // Evan Stark - Septmeber 20th 2024 - ITCS 4230 001
 
-// Moving left or right.
-x += ( keyboard_check(vk_right) - keyboard_check(vk_left) ) * move_speed;
-y += ( keyboard_check(vk_down) - keyboard_check(vk_up) ) * move_speed;
+// Moving the player as long they aren't colliding with a wall.
 
-
-
-// De-accelerating the player to give player a more "human" feel.
-
-// TODO: finish functionality.
-
-/* if(!keyboard_check(vk_right) && !keyboard_check(vk_left))
+// Moving the player.
+if (keyboard_check(vk_up) and !instance_place(x, y - move_speed, obj_wall)) 
 {
-	while(x_speed != 0)
-	{
-		x_speed -= move_speed * 0.1;
-		x += x_speed;
-	}
+	y -= move_speed;
+}
 
-} */
+if (keyboard_check(vk_down) and !instance_place(x, y + move_speed, obj_wall)) 
+{
+	y += move_speed;
+}
+
+if (keyboard_check(vk_left) and !instance_place(x - move_speed, y, obj_wall)) {
+	x -= move_speed;
+}
+
+if (keyboard_check(vk_right) and !instance_place(x + move_speed, y, obj_wall)) {
+	x += move_speed;
+}
+
+// If the space bar pressed AND if the can shoot is true, create a bullet instance.
+if(keyboard_check(vk_space) && can_shoot)
+{
+	instance_create_layer(x, y, "Instances", obj_bullet);
+	// Cooldown for shooting bullets.
+	can_shoot = false;
+	alarm[0] = 30;
+	// Change to shooting sprite
+	sprite_index = spr_tempShootSprite;
+	alarm[1] = 25;
+}
+	
