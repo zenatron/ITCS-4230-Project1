@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"Project_1_Evan's_Copy",
+  "%Name":"Ravager_Revenge",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -30,9 +30,9 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.6.2.162",
   },
-  "name":"Project_1_Evan's_Copy",
+  "name":"Ravager_Revenge",
   "resources":[
     {"id":{"name":"fnt_body","path":"fonts/fnt_body/fnt_body.yy",},},
     {"id":{"name":"fnt_small_body","path":"fonts/fnt_small_body/fnt_small_body.yy",},},
