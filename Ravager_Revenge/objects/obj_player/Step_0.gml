@@ -3,22 +3,22 @@
 // Moving the player as long they aren't colliding with a wall.
 
 // Moving the player.
-if (keyboard_check(vk_up) and !instance_place(x, y - move_speed, obj_wall)) 
-{
-	y -= move_speed;
-}
+if (can_move) {
+	if (keyboard_check(vk_up) and !instance_place(x, y - move_speed, obj_wall)) {
+		y -= move_speed;
+	}
 
-if (keyboard_check(vk_down) and !instance_place(x, y + move_speed, obj_wall)) 
-{
-	y += move_speed;
-}
+	if (keyboard_check(vk_down) and !instance_place(x, y + move_speed, obj_wall)) {
+		y += move_speed;
+	}
 
-if (keyboard_check(vk_left) and !instance_place(x - move_speed, y, obj_wall)) {
-	x -= move_speed;
-}
+	if (keyboard_check(vk_left) and !instance_place(x - move_speed, y, obj_wall)) {
+		x -= move_speed;
+	}
 
-if (keyboard_check(vk_right) and !instance_place(x + move_speed, y, obj_wall)) {
-	x += move_speed;
+	if (keyboard_check(vk_right) and !instance_place(x + move_speed, y, obj_wall)) {
+		x += move_speed;
+	}
 }
 
 // If the space bar pressed AND if the can shoot is true, create a bullet instance.
