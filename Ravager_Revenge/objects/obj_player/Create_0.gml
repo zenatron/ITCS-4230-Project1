@@ -7,3 +7,5 @@ y_speed = 0;			// How fast the player is moving going up and down.
 
 can_shoot = true;		// Boolean for if the player can shoot a bullet.
 sprite_index = spr_player;		// Player's initial sprite.
+
+max_health = player_health; // track damage compared to max health

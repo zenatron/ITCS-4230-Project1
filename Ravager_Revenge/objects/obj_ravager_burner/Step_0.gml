@@ -1,62 +1,69 @@
 // Evelyn Hosana - September 26th 2024 - ITCS 5230
 
-// Player detection logic
+// player detection logic
 if (instance_exists(obj_player)) {
-    player_distance = point_distance(x, y, obj_player.x, obj_player.y);
-	player_direction = point_direction(x, y, obj_player.x, obj_player.y);
+    var player_distance = point_distance(x, y, obj_player.x, obj_player.y);
     
-    // Check if player is within range
+    // check if player is within range
     if (player_distance <= range) {
         player_detected = true; // set player detection flag to true
-		is_moving = false; // set movement flag to false
-		alarm[0] = -1; // stop random movement
-		alarm[1] = -1; // stop fire path
-		
-		// call fire ring attack script
-		if (!fire_ring_active) {
-			fire_ring_active = true; // set fire ring flag to true
-			fire_ring_radius = 32; // reset ring radius
-			alarm[2] = fire_ring_interval; // start fire ring expansion
-		}
+		state = burner_state.attack; // swich to attack state
+		alarm[1] = -1; // stop fire path creation
     } else {
         player_detected = false; // set player detection flag to false
-		is_moving = true;  // set movement flag to true
-		fire_ring_active = false; // stop fire ring attack
-		
-		if (alarm[0] == -1) { alarm[0] = movement_duration; } // reset movement
-		if (alarm[1] == -1) { alarm[1] = fire_interval; } // reset fire path
+		if (state == burner_state.attack) {
+			state = burner_state.move; // resume movement when player leaves range
+			move_speed = 0.5;
+			alarm[0] = 300;  // set movement alarm (5 seconds)
+			
+			// stop fire ring attack when player leaves range
+			fire_ring_active = false;
+			alarm[2] = -1;
+			
+			alarm[1] = 30; // resume fire path creation
+		}
     }
 }
 
-// If player is detected, move toward player
-if (player_detected) {
-    if (player_distance > 48) {
-        // Move towards player
-        x += lengthdir_x(speed, player_direction);
-        y += lengthdir_y(speed, player_direction);
-        
-        // flip sprite based on direction
-        image_xscale = (obj_player.x < x) ? -1 : 1;
-    } else {
-        // stop moving if too close to player
-        speed = 0;
-    }
-} else {
-    // if no player detected, continue random movement
-    if (is_moving) {
+// handle state logic
+switch (state) {
+    case burner_state.move:
         var move_direction = point_direction(x, y, target_x, target_y);
-        
-        x += lengthdir_x(speed, move_direction);
-        y += lengthdir_y(speed, move_direction);
-        
+        x += lengthdir_x(move_speed, move_direction);
+        y += lengthdir_y(move_speed, move_direction);
+
         // flip sprite based on movement
-		image_xscale = (target_x < x) ? -1 : 1;
-		
-		// check if enemy has reach target, pick new target if so
-		if (point_distance(x, y, target_x, target_y) < 5) {
-			// pick new target if close to current one
-			target_x = x + irandom_range(-256, 256);
-            target_y = y + irandom_range(-256, 256);
-		}
-    }
+        image_xscale = (target_x < x) ? -1 : 1;
+        
+        // check if target is reached
+        if (point_distance(x, y, target_x, target_y) < 5) {
+            state = burner_state.wait;  // switch to waiting state
+            alarm[0] = 180;  // wait for 3 seconds
+        }
+        break;
+
+    case burner_state.wait:
+        // waiting state handled by alarm[0]
+        break;
+
+    case burner_state.attack:
+        if (player_distance > 48) {
+            // move towards player if detected and not too close
+            var player_direction = point_direction(x, y, obj_player.x, obj_player.y);
+            x += lengthdir_x(move_speed, player_direction);
+            y += lengthdir_y(move_speed, player_direction);
+
+            // flip sprite based on player position
+            image_xscale = (obj_player.x < x) ? -1 : 1;
+        } else {
+            move_speed = 0;  // stop moving if too close
+        }
+
+        // call fire ring attack script if not already active
+        if (!fire_ring_active) {
+            fire_ring_active = true;
+            fire_ring_radius = 32;  // reset ring radius
+            alarm[2] = fire_ring_interval;  // start fire ring expansion
+        }
+        break;
 }

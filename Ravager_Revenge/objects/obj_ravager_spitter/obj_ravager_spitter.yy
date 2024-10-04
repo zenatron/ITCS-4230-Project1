@@ -6,12 +6,15 @@
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_ravager_spitter",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"range","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"320",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"speed","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"move_speed","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"enemy_health","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"300",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"max_health","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"300",},
   ],
   "parent":{
     "name":"Objects",

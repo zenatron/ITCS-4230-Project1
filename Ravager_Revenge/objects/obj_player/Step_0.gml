@@ -32,4 +32,12 @@ if(keyboard_check(vk_space) && can_shoot)
 	sprite_index = spr_tempShootSprite;
 	alarm[1] = 25;
 }
-	
+
+
+
+// Evelyn Hosana - October 3rd 2024 - ITCS 5230
+
+// check if player health is below 0, destroy player
+if (health <= 0) {
+	instance_destroy();
+}

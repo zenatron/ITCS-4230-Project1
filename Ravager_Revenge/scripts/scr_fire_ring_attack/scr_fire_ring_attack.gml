@@ -12,9 +12,6 @@ function scr_fire_ring_attack(){
             // create fire instance
             var fire = instance_create_layer(fire_x, fire_y, "Instances", obj_burner_fire);
             fire.image_speed = 0.2;  // adjust animation speed
-            
-            // set lifespan
-            fire.alarm[0] = fire_ring_interval;
         }
     
         // expand fire ring radius by 32 pixels
