@@ -3,12 +3,13 @@
 var max_options = 4; // total number of options
 
 // move selection up/down only if no submenu is active
+// Move thru menu with WASD now: Evan Stark - October 5th 2024
 if (!show_how_to_play and !show_story and !show_credits) {
-    if (keyboard_check_pressed(vk_up)) {
+    if (keyboard_check_pressed(ord("W"))) {
         selected_option -= 1;
         if (selected_option < 0) selected_option = max_options;
     }
-    if (keyboard_check_pressed(vk_down)) {
+    if (keyboard_check_pressed(ord("S"))) {
         selected_option += 1;
         if (selected_option > max_options) selected_option = 0;
     }
