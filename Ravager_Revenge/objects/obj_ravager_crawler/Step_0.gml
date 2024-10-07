@@ -6,11 +6,7 @@ if (instance_exists(obj_player)) {
 	var distance_to_player = point_distance(x, y, obj_player.x, obj_player.y);
 
 	// check of player is within patrol range
-	if (distance_to_player < range) {
-		player_detected = true;
-	} else {
-		player_detected = false; // player out of range, resume patrol
-	}
+	player_detected = (distance_to_player < range);
 }
 // patrol state when player is NOT detected
 if (!player_detected) {
@@ -26,14 +22,22 @@ if (player_detected) {
 	// calculate direction towards player
     var direction_to_player = point_direction(x, y, obj_player.x, obj_player.y);
 
-    // move enemy in direction of player using speed
-    x += lengthdir_x(move_speed, direction_to_player);  // move along x-axis
-    y += lengthdir_y(move_speed, direction_to_player);  // move along y-axis
-
+    // only move towards player if outside the distance_offset
+    if (distance_to_player > distance_offset) {
+	    x += lengthdir_x(move_speed, direction_to_player);  // move along x-axis
+	    y += lengthdir_y(move_speed, direction_to_player);  // move along y-axis
+	}
+	
     // flip sprite based on horizontal direction
     if (obj_player.x > x) {
         image_xscale = 1;  // face right
     } else {
         image_xscale = -1;  // face left
+    }
+	
+	// attack player if alarm[0] is not running (cooldown is over)
+    if (distance_to_player <= distance_offset and alarm[0] == -1) {
+        obj_player.player_health -= 10; // reduce player health by 10
+        alarm[0] = attack_cooldown; // set cooldown
     }
 }

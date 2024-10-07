@@ -43,6 +43,6 @@ if (mouse_check_button(mb_left) && can_shoot)
 // Evelyn Hosana - October 3rd 2024 - ITCS 5230
 
 // check if player health is below 0, destroy player
-if (health <= 0) {
+if (player_health <= 0) {
 	instance_destroy();
 }
