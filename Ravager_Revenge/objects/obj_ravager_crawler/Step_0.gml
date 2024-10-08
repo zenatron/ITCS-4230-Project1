@@ -38,6 +38,7 @@ if (player_detected) {
 	// attack player if alarm[0] is not running (cooldown is over)
     if (distance_to_player <= distance_offset and alarm[0] == -1) {
         obj_player.player_health -= 10; // reduce player health by 10
-        alarm[0] = attack_cooldown; // set cooldown
+        obj_player.damage_taken = true;
+		alarm[0] = attack_cooldown; // set cooldown
     }
 }

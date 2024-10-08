@@ -9,9 +9,9 @@ state = burner_state.move;
 // fire ring attack variables
 fire_ring_radius = 32; // initial radius of fire ring
 fire_ring_max_radius = range; // max radius based on player detection range
-fire_ring_interval = 1.5 * room_speed; // time between fire ring expansions
+fire_ring_interval = 0.5 * room_speed; // time between fire ring expansions
 fire_ring_active = false;
-fire_ring_objects = 8; // number of fire objects in ring
+fire_ring_objects = 12; // number of fire objects in ring
 
 alarm[0] = 300;  // movement duration (5 seconds)
 alarm[1] = 30; // fire path interval (0.5 seconds)

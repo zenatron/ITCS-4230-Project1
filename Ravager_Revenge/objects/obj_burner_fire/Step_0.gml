@@ -5,6 +5,7 @@ if (place_meeting(x, y, obj_player)) {
     // only apply damage if cooldown is inactive
    if (global.burn_cooldown == -1) {
         obj_player.player_health -= 10;  // reduce player health by 10
+		obj_player.damage_taken = true;
         global.burn_cooldown = global.burn_interval;  // start global cooldown
     }
 }

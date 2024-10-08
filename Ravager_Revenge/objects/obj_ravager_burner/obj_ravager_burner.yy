@@ -14,7 +14,7 @@
   "name":"obj_ravager_burner",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"move_speed","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.5",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"range","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"160",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"range","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"240",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"enemy_health","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"200",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_ravager_crawler","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"propertyId":{"name":"max_health","path":"objects/obj_ravager_crawler/obj_ravager_crawler.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"200",},
   ],

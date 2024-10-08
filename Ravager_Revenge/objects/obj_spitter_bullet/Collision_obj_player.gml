@@ -2,4 +2,5 @@
 
 // if bullet hits player, destroy bullet and deal damage to player
 other.player_health -= 10;
+obj_player.damage_taken = true;
 instance_destroy();

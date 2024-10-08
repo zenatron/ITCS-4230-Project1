@@ -38,11 +38,21 @@ if (mouse_check_button(mb_left) && can_shoot)
 	alarm[1] = 25;
 }
 
-
-
 // Evelyn Hosana - October 3rd 2024 - ITCS 5230
 
 // check if player health is below 0, destroy player
 if (player_health <= 0) {
 	instance_destroy();
+}
+
+// check if player health was reduced
+if (player_health < previous_health) { 
+	damage_taken = true;
+	previous_health = player_health; // update health tracker
+	
+	// spawn blood object
+	instance_create_layer(x, y, "Instances", obj_blood);
+	
+	// set alarm for 1 second
+    alarm[2] = room_speed; 
 }

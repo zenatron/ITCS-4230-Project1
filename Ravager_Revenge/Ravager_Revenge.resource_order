@@ -19,6 +19,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_body","order":1,"path":"fonts/fnt_body/fnt_body.yy",},
     {"name":"fnt_small_body","order":2,"path":"fonts/fnt_small_body/fnt_small_body.yy",},
+    {"name":"obj_blood","order":17,"path":"objects/obj_blood/obj_blood.yy",},
     {"name":"obj_bullet","order":9,"path":"objects/obj_bullet/obj_bullet.yy",},
     {"name":"obj_burner_fire","order":8,"path":"objects/obj_burner_fire/obj_burner_fire.yy",},
     {"name":"obj_camera","order":13,"path":"objects/obj_camera/obj_camera.yy",},
