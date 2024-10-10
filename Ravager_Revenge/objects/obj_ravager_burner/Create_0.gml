@@ -1,5 +1,12 @@
 // Evelyn Hosana - September 26th 2024 - ITCS 5230
 
+// declare enum states
+enum burner_state {
+	move,
+	wait,
+	attack
+}
+
 // variables for movement and target location
 target_x = x + irandom_range(-360, 360);
 target_y = y + irandom_range(-360, 360);

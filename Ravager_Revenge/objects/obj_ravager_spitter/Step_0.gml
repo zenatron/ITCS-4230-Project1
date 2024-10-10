@@ -17,10 +17,6 @@ if (instance_exists(obj_player)) {
 
 // attack state when player is detected
 if (player_detected) {
-    // flip sprite based on horizontal direction
-    if (obj_player.x > x) {
-        image_xscale = 1;  // face right
-    } else {
-        image_xscale = -1;  // face left
-    }
+    // flip sprite based on player position
+    image_xscale = (obj_player.x < x) ? -1 : 1;
 }

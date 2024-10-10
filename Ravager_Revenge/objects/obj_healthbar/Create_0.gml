@@ -2,9 +2,6 @@
 
 sprite_index = spr_healthbar;
 
-// get display height
-display_h = display_get_height();
-
 // get sprite width and height
 sprite_w = sprite_width;
 sprite_h = sprite_height;

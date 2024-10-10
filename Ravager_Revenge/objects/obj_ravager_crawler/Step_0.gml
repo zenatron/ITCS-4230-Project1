@@ -28,12 +28,8 @@ if (player_detected) {
 	    y += lengthdir_y(move_speed, direction_to_player);  // move along y-axis
 	}
 	
-    // flip sprite based on horizontal direction
-    if (obj_player.x > x) {
-        image_xscale = 1;  // face right
-    } else {
-        image_xscale = -1;  // face left
-    }
+    // flip sprite based on player position
+    image_xscale = (obj_player.x < x) ? -1 : 1;
 	
 	// attack player if alarm[0] is not running (cooldown is over)
     if (distance_to_player <= distance_offset and alarm[0] == -1) {

@@ -1,7 +1,14 @@
 // Evelyn Hosana - October 7th 2023 - ITCS 5230
 
+// get display height for GUI
+var display_h = display_get_gui_height();
+
 // get player current health percentage (changes throughout play time)
-var health_percentage = obj_player.player_health / obj_player.max_health;
+if (instance_exists(obj_player)) {
+    var health_percentage = obj_player.player_health / obj_player.max_health;
+} else {
+    var health_percentage = 1;  // full health as a default if obj_player is missing
+}
 
 // scale factors for sprite
 var scale_x = 2;

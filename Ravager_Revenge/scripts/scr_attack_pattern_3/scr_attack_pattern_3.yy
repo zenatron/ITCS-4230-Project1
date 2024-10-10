@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_burner_state",
+  "%Name":"scr_attack_pattern_3",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_burner_state",
+  "name":"scr_attack_pattern_3",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

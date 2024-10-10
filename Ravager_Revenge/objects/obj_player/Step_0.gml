@@ -56,3 +56,6 @@ if (player_health < previous_health) {
 	// set alarm for 1 second
     alarm[2] = room_speed; 
 }
+
+// if player is no longer colliding with slime, reset flag
+if (!place_meeting(x, y, obj_slime)) { damaged_by_slime = false; }
