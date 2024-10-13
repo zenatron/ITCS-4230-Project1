@@ -10,3 +10,5 @@ draw_text(25, 50, "x speed : " + string(obj_player.x_speed));
 draw_text(25, 75, "y speed : " + string(obj_player.y_speed));
 draw_text(25, 100, "x Position : " + string(obj_player.x));
 draw_text(25, 125, "y Position : " + string(obj_player.y));
+draw_text(25, 150, "player health : " + string(obj_player.player_health));
+draw_text(25, 175, "damage taken? : " + string(obj_player.damage_taken));
