@@ -2,54 +2,76 @@
 
 // Moving the player as long they aren't colliding with a wall.
 if (can_move) {
-	if (keyboard_check(ord("W")) and !instance_place(x, y - move_speed, obj_wall)) {
-		y -= move_speed;
-		// starting frame for upward motion loop
-		if (image_index < 12 or image_index > 14) { image_index = 12; }
-		image_speed = 0.2;
-		is_moving = true;
-	}
-	if (keyboard_check(ord("S")) and !instance_place(x, y + move_speed, obj_wall)) {
-		y += move_speed;
-		// starting frame for downward motion loop
-		if (image_index < 6 or image_index > 8) { image_index = 6; }
-		image_speed = 0.2;
-		is_moving = true;
-	}
-	if (keyboard_check(ord("A")) and !instance_place(x - move_speed, y, obj_wall)) {
-		x -= move_speed;
-		// starting frame for side motion loop
-		if (image_index < 9 or image_index > 11) { image_index = 9; }
-		image_xscale = 1; // ensure facing left
-		image_speed = 0.2;
-		is_moving = true;
-	}
-	if (keyboard_check(ord("D")) and !instance_place(x + move_speed, y, obj_wall)) {
-		x += move_speed;
-		// starting frame for side motion loop
-		if (image_index < 9 or image_index > 11) { image_index = 9; }
-		image_xscale = -1; // ensure facing right
-		image_speed = 0.2;
-		is_moving = true;
-	} else {
-		is_moving = false;
-	}
-	
-	if (!is_moving) {
-		image_speed = 0; // pause animation for idle
-		// idle frame up
-		if (keyboard_check_released(ord("W"))) { image_index = 5; }
-		// idle frame down
-        else if (keyboard_check_released(ord("S"))) { image_index = 3; }
-		// idle frame left
-        else if (keyboard_check_released(ord("A"))) { image_index = 4; image_xscale = 1; }
-		// idle frame right
-        else if (keyboard_check_released(ord("D"))) { image_index = 4; image_xscale = -1; }
-	}
-	// reset speeds after movement
-	x_speed = 0;
+    var moving_horizontally = false; // Track horizontal movement
+    var moving_vertically = false;   // Track vertical movement
+    is_moving = false;               // Assume not moving initially
+
+	// Handle vertical movement
+    if (keyboard_check(ord("W")) and !instance_place(x, y - move_speed, obj_wall)) {
+        y -= move_speed;
+        moving_vertically = true; // Track vertical movement
+        is_moving = true;
+    } 
+    else if (keyboard_check(ord("S")) and !instance_place(x, y + move_speed, obj_wall)) {
+        y += move_speed;
+        moving_vertically = true;
+        is_moving = true;
+    }
+
+	// Handle horizontal movement
+    if (keyboard_check(ord("A")) and !instance_place(x - move_speed, y, obj_wall)) {
+        x -= move_speed;
+        moving_horizontally = true; // Track horizontal movement
+        image_xscale = 1; // Face left
+        is_moving = true;
+    } 
+    else if (keyboard_check(ord("D")) and !instance_place(x + move_speed, y, obj_wall)) {
+        x += move_speed;
+        moving_horizontally = true;
+        image_xscale = -1; // Face right
+        is_moving = true;
+    }
+
+    // Play correct animation based on movement direction
+    if (moving_horizontally) {
+        // Play side animation (frames 9-11)
+        if (image_index < 9 or image_index > 11) { image_index = 9; }
+        image_speed = 0.2;
+    } 
+    else if (moving_vertically) {
+        if (keyboard_check(ord("W"))) {
+            // Play upward animation (frames 12-14)
+            if (image_index < 12 or image_index > 14) { image_index = 12; }
+        } else {
+            // Play downward animation (frames 6-8)
+            if (image_index < 6 or image_index > 8) { image_index = 6; }
+        }
+        image_speed = 0.2;
+    }
+
+    // Handle idle state if no movement occurs
+    if (!is_moving) {
+        image_speed = 0; // Stop animation
+
+        // Set idle frames based on last released key
+        if (keyboard_check_released(ord("W"))) { image_index = 5; } // Idle up
+        else if (keyboard_check_released(ord("S"))) { image_index = 3; } // Idle down
+        else if (keyboard_check_released(ord("A"))) { 
+            image_index = 4; 
+            image_xscale = 1; // Face left
+        }
+        else if (keyboard_check_released(ord("D"))) { 
+            image_index = 4; 
+            image_xscale = -1; // Face right
+        }
+    }
+
+    // Reset speeds
+    x_speed = 0;
     y_speed = 0;
 }
+
+
 
 // If the left mouse button is held AND if the can shoot is true, create a bullet instance.
 // SOURCE: https://www.youtube.com/watch?v=ZyYXQ6IR4lY
