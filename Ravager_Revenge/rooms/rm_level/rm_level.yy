@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_level",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_level/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -72,6 +72,9 @@
     {"name":"inst_31F107BE","path":"rooms/rm_level/rm_level.yy",},
     {"name":"inst_429E142","path":"rooms/rm_level/rm_level.yy",},
     {"name":"inst_4EF526D1","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_704F5757","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_176F0A6E","path":"rooms/rm_level/rm_level.yy",},
+    {"name":"inst_7DA66618","path":"rooms/rm_level/rm_level.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -100,6 +103,9 @@
         {"$GMRInstance":"v1","%Name":"inst_BFA245F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BFA245F","objectId":{"name":"obj_healthkit","path":"objects/obj_healthkit/obj_healthkit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":1136.0,"y":144.0,},
         {"$GMRInstance":"v1","%Name":"inst_7EB6FF9A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7EB6FF9A","objectId":{"name":"obj_healthkit","path":"objects/obj_healthkit/obj_healthkit.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":1776.0,"y":240.0,},
         {"$GMRInstance":"v1","%Name":"inst_31F107BE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_31F107BE","objectId":{"name":"obj_artifact","path":"objects/obj_artifact/obj_artifact.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":928.0,"y":448.0,},
+        {"$GMRInstance":"v1","%Name":"inst_704F5757","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_704F5757","objectId":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":208.0,"y":144.0,},
+        {"$GMRInstance":"v1","%Name":"inst_176F0A6E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_176F0A6E","objectId":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":608.0,},
+        {"$GMRInstance":"v1","%Name":"inst_7DA66618","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7DA66618","objectId":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1648.0,"y":368.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Other_Tiles","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Other_Tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":34,"SerialiseWidth":60,"TileCompressedData":[
           -940,-2147483648,1,101,-859,-2147483648,183,101,102,103,100,101,102,103,100,101,102,103,100,101,102,

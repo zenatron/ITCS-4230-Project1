@@ -123,5 +123,13 @@ if (player_health < previous_health) {
     alarm[2] = room_speed; 
 }
 
-// if player is no longer colliding with slime, reset flag
+// if player no longer colliding with slime, reset flag
 if (!place_meeting(x, y, obj_slime)) { damaged_by_slime = false; }
+
+// loop through NPCs and check if player interacting with any NPCs
+with (obj_npc) {
+    if (player_in_range and mission_assigned) {
+        global.mission_visible = true;
+        break;  // stop checking once we find active mission
+    }
+}

@@ -26,3 +26,5 @@ image_yscale = 1.5; // scale up sprite height
 image_index = 3; // begin with idle downward sprite
 
 is_moving = false;
+// set mission visibility flag
+global.mission_visible = false;
