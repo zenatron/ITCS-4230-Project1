@@ -8,3 +8,6 @@ if (!rm_main_menu) {
 // initialize global obj_fire attack cooldown
 global.burn_cooldown = -1;
 global.burn_interval = room_speed; // 1 second
+
+// Immortality variable for cheats
+global.immortality = false

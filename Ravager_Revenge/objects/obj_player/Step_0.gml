@@ -9,14 +9,14 @@ if (can_move) {
 		image_speed = 0.2;
 		is_moving = true;
 	}
-	else if (keyboard_check(ord("S")) and !instance_place(x, y + move_speed, obj_wall)) {
+	if (keyboard_check(ord("S")) and !instance_place(x, y + move_speed, obj_wall)) {
 		y += move_speed;
 		// starting frame for downward motion loop
 		if (image_index < 6 or image_index > 8) { image_index = 6; }
 		image_speed = 0.2;
 		is_moving = true;
 	}
-	else if (keyboard_check(ord("A")) and !instance_place(x - move_speed, y, obj_wall)) {
+	if (keyboard_check(ord("A")) and !instance_place(x - move_speed, y, obj_wall)) {
 		x -= move_speed;
 		// starting frame for side motion loop
 		if (image_index < 9 or image_index > 11) { image_index = 9; }
@@ -24,7 +24,7 @@ if (can_move) {
 		image_speed = 0.2;
 		is_moving = true;
 	}
-	else if (keyboard_check(ord("D")) and !instance_place(x + move_speed, y, obj_wall)) {
+	if (keyboard_check(ord("D")) and !instance_place(x + move_speed, y, obj_wall)) {
 		x += move_speed;
 		// starting frame for side motion loop
 		if (image_index < 9 or image_index > 11) { image_index = 9; }
@@ -84,7 +84,8 @@ if (mouse_check_button(mb_left) and can_shoot) {
 // Evelyn Hosana - October 3rd 2024 - ITCS 5230
 
 // check if player health is below 0, destroy player
-if (player_health <= 0) {
+// Adding super basic Immortality check - PV - 10/14/2024
+if (player_health <= 0 && !global.immortality) {
 	instance_destroy();
 }
 
