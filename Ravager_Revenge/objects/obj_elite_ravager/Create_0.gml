@@ -6,7 +6,15 @@ sprite_size = 1; // object size, initially 1
 shaking_effect = 0;
 timer = 0;
 
-common = room_speed * 5;
+// store original mask size
+mask_width = 32;
+mask_height = 32;
+
+// define custom collision area based on sprite size
+hitbox_left = 0;
+hitbox_right = 0;
+hitbox_top = 0;
+hitbox_bottom = 0;
 
 enum elite_state {
 	start,
@@ -20,15 +28,6 @@ state = elite_state.start;
 player_direction = 0;
 player_distance = 0;
 
-// initialize variables and timers for phase 2 laser attack
-laser_ready = false;
-alarm[1] = common; // laser shot timer (fires every 2 seconds)
-alarm[2] = common; // shooting window timer (5 seconds of shooting)
-alarm[3] = common; // cooldown timer (5 seconds of waiting)
-slime_limit = 10; // maximum number of slime puddles allowed at once
-
-// set up alarms
 alarm[0] = room_speed * 10; // minion spawn cooldown
-alarm[1] = -1; // inactive
-alarm[2] = common;
-alarm[3] = -1;
+slime_limit = 10; // maximum number of slime puddles allowed at once
+spawn_slime = false;

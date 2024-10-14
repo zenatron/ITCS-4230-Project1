@@ -20,3 +20,9 @@ previous_health = player_health;
 damage_taken = false;
 alarm[2] = -1; // no damage taken initially
 shader_timer = shader_get_uniform(sh_damage, "uTimer");
+
+image_speed = 0; // pause frames from constantly looping
+image_yscale = 1.5; // scale up sprite height
+image_index = 3; // begin with idle downward sprite
+
+is_moving = false;
