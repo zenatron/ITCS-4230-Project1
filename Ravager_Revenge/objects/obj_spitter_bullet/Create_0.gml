@@ -18,3 +18,5 @@ speed = bullet_speed;
 frame_timer = 0;
 frame_duration = 1 * room_speed;
 rotation_speed = 3; // curvy shot
+
+if (!audio_is_playing(snd_spitter_attack)) { audio_play_sound(snd_spitter_attack, 2, false); }

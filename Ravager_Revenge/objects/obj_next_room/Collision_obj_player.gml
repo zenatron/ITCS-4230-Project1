@@ -1,5 +1,4 @@
-/// @description Temporary object
-// Evelyn Hosana - October 2nd 2024 - ITCS 5230
+// Evelyn Hosana - October 16th 2024 - ITCS 5230
 
-// move player to next room upon collision
-room_goto_next();
+// if all enemy instances are not in rm_level, move player to next room upon collision
+if (!instance_exists(obj_ravager_crawler)) { room_goto(rm_fin); }

@@ -2,6 +2,8 @@
 
 // find valid position for enemy to spawn (not stuck in wall)
 function scr_find_valid_pos(){
+	var spawn_radius = argument[0];
+	
 	var valid = false;
     var spawn_x, spawn_y;
         

@@ -16,7 +16,7 @@ function scr_draw_dialog_box() {
     
     // draw wrapped text
     draw_set_color(c_black);
-    scr_draw_wrapped_text(gui_x + 20, gui_y + 20, dialog_text, box_width - 40);
+    scr_draw_wrapped_text(gui_x + 20, gui_y + 20, dialog_text, box_width - 40, 20);
     
     // draw 'Press Enter to Continue' prompt
     draw_text(gui_x + 20, gui_y + box_height - 20, "Press 'Enter' to Continue");

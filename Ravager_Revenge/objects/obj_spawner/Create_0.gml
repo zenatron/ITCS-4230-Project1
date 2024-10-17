@@ -10,5 +10,7 @@ crawler_count = 0;
 spitter_count = 0;
 burner_count = 0;
 
+spawn_radius = 360;
+
 // set alarm to trigger spawning
 alarm[0] = room_speed * 8; // 8 seconds

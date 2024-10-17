@@ -8,7 +8,7 @@ function scr_attack_pattern_3(){
 
 	// deal damage on collision with a cooldown
 	if (place_meeting(x, y, obj_player) and alarm[2] <= 0) {
-	    obj_player.player_health -= 20;
+	    obj_player.player_health -= 50;
 	    alarm[2] = room_speed * 5; // cooldown for attack
 	}
 }

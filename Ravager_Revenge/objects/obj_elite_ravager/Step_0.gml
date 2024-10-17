@@ -19,7 +19,11 @@ if (instance_exists(obj_player)) {
 		shaking_effect = 0; // stop shaking once size maxes out
 	    image_index = 2; // switch to final frame (frame 2)
 	    image_speed = 0;  // stop automatic animation
-    }
+		if (!roar_play) {
+			audio_play_sound(snd_boss_roar, 1, false);
+			roar_play = true;
+		}
+	}
 	// flip sprite based on player position
     image_xscale = (obj_player.x < x) ? -1 : 1;
 	

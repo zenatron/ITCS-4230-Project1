@@ -1,1 +1,1 @@
-move_speed = 4;
+instance_destroy(); // destroy player

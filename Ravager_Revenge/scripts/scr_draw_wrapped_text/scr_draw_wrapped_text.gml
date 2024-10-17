@@ -4,9 +4,9 @@
 /// @param x, y - position to draw text
 /// @param text - text to draw
 /// @param width - maximum width before wrapping text
-function scr_draw_wrapped_text(x, y, text, width) {
-    var line_height = 20;  // line height
-    var words = string_split(text, " ");  // split text into words
+/// @param line_height - the height of each line (vertical space between lines)
+function scr_draw_wrapped_text(x, y, text, width, line_height) {
+    var words = string_split(text, " "); // split text into words
     var current_line = "";
     var current_y = y;
     

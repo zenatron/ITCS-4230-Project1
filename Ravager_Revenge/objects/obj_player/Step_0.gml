@@ -2,14 +2,14 @@
 
 // Moving the player as long they aren't colliding with a wall.
 if (can_move) {
-    var moving_horizontally = false; // Track horizontal movement
-    var moving_vertically = false;   // Track vertical movement
-    is_moving = false;               // Assume not moving initially
+    var moving_horizontally = false; // track horizontal movement
+    var moving_vertically = false; // track vertical movement
+    is_moving = false; // assume not moving initially
 
 	// Handle vertical movement
     if (keyboard_check(ord("W")) and !instance_place(x, y - move_speed, obj_wall)) {
         y -= move_speed;
-        moving_vertically = true; // Track vertical movement
+        moving_vertically = true; // track vertical movement
         is_moving = true;
     } 
     else if (keyboard_check(ord("S")) and !instance_place(x, y + move_speed, obj_wall)) {
@@ -21,52 +21,57 @@ if (can_move) {
 	// Handle horizontal movement
     if (keyboard_check(ord("A")) and !instance_place(x - move_speed, y, obj_wall)) {
         x -= move_speed;
-        moving_horizontally = true; // Track horizontal movement
-        image_xscale = 1; // Face left
+        moving_horizontally = true; // track horizontal movement
+        image_xscale = 1; // face left
         is_moving = true;
     } 
     else if (keyboard_check(ord("D")) and !instance_place(x + move_speed, y, obj_wall)) {
         x += move_speed;
         moving_horizontally = true;
-        image_xscale = -1; // Face right
+        image_xscale = -1; // face right
         is_moving = true;
     }
 
-    // Play correct animation based on movement direction
+    // play animation based on movement direction
     if (moving_horizontally) {
-        // Play side animation (frames 9-11)
+        // play side animation (frames 9-11)
         if (image_index < 9 or image_index > 11) { image_index = 9; }
         image_speed = 0.2;
     } 
     else if (moving_vertically) {
         if (keyboard_check(ord("W"))) {
-            // Play upward animation (frames 12-14)
+            // play upward animation (frames 12-14)
             if (image_index < 12 or image_index > 14) { image_index = 12; }
         } else {
-            // Play downward animation (frames 6-8)
+            // play downward animation (frames 6-8)
             if (image_index < 6 or image_index > 8) { image_index = 6; }
         }
         image_speed = 0.2;
     }
 
-    // Handle idle state if no movement occurs
+    // handle idle state if no movement occurs
     if (!is_moving) {
-        image_speed = 0; // Stop animation
+        image_speed = 0; // stop animation
 
-        // Set idle frames based on last released key
+        // set idle frames based on last released key
         if (keyboard_check_released(ord("W"))) { image_index = 5; } // Idle up
         else if (keyboard_check_released(ord("S"))) { image_index = 3; } // Idle down
         else if (keyboard_check_released(ord("A"))) { 
             image_index = 4; 
-            image_xscale = 1; // Face left
+            image_xscale = 1; // face left
         }
         else if (keyboard_check_released(ord("D"))) { 
             image_index = 4; 
-            image_xscale = -1; // Face right
+            image_xscale = -1; // face right
         }
-    }
-
-    // Reset speeds
+		
+		// check if audio is currently playing and finished before playing again
+		if (audio_is_playing(snd_player_walk)) { audio_stop_sound(snd_player_walk); }
+    } else {
+		// play walking sound
+		if (!audio_is_playing(snd_player_walk)) { audio_play_sound(snd_player_walk, 1, true); }
+	}
+    // reset speeds
     x_speed = 0;
     y_speed = 0;
 }
@@ -108,11 +113,20 @@ if (mouse_check_button(mb_left) and can_shoot) {
 // check if player health is below 0, destroy player
 // Adding super basic Immortality check - PV - 10/14/2024
 if (player_health <= 0 && !global.immortality) {
-	instance_destroy();
+	if (!death_sound_played) {
+		audio_play_sound(snd_player_death, 2, false);
+		death_sound_played = true;
+		
+		alarm[3] = room_speed * 1;
+	}
 }
 
 // check if player health was reduced
-if (player_health < previous_health) { 
+if (player_health < previous_health) {
+	// check if audio is currently playing and finished before playing again
+	if (!audio_is_playing(snd_player_damage) and !(player_health <= 15)) { 
+		audio_play_sound(snd_player_damage, 3, false); 
+	}
 	damage_taken = true;
 	previous_health = player_health; // update health tracker
 	
@@ -124,7 +138,7 @@ if (player_health < previous_health) {
 }
 
 // if player no longer colliding with slime, reset flag
-if (!place_meeting(x, y, obj_slime)) { damaged_by_slime = false; }
+if (!place_meeting(x, y, obj_slime)) { damaged_by_slime = false; move_speed = 4; }
 
 // loop through NPCs and check if player interacting with any NPCs
 with (obj_npc) {

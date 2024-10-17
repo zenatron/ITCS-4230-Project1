@@ -5,6 +5,7 @@ image_index = 0; // start at frame 0
 sprite_size = 1; // object size, initially 1
 shaking_effect = 0;
 timer = 0;
+roar_play = false;
 
 // store original mask size
 mask_width = 32;

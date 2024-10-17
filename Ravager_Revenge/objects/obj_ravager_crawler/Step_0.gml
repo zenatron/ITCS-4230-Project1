@@ -35,6 +35,7 @@ if (player_detected) {
     if (distance_to_player <= distance_offset and alarm[0] == -1) {
         obj_player.player_health -= 10; // reduce player health by 10
         obj_player.damage_taken = true;
+		if (!audio_is_playing(snd_crawler_attack)) { audio_play_sound(snd_crawler_attack, 1, false); }
 		alarm[0] = attack_cooldown; // set cooldown
     }
 }

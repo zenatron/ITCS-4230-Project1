@@ -11,3 +11,7 @@ if (instance_exists(spawner_id)) {
 if (global.mission_assigned_npc1 and global.mission_progress_npc1 < global.mission_target_npc1) {
     global.mission_progress_npc1 += 1;
 }
+
+if (!audio_is_playing(snd_enemy_death)) { audio_play_sound(snd_enemy_death, 1, false); }
+
+global.kill_count += 1;
