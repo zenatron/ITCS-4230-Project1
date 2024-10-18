@@ -15,3 +15,8 @@ if (spawn_pos != noone) {
 	// set artifact image_index to chosen frame
 	artifact.image_index = 0;
 }
+
+// Delete the obj_blocker boss wall in the boss room, allowing player to proceed
+// Philip Vishnevsky
+instance_destroy(obj_blocker)
+layer_set_visible("Blocking_Wall", false)

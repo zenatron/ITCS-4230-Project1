@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"Ravager_Revenge",
   "resources":[
@@ -39,6 +39,7 @@
     {"id":{"name":"fnt_title","path":"fonts/fnt_title/fnt_title.yy",},},
     {"id":{"name":"obj_artifact","path":"objects/obj_artifact/obj_artifact.yy",},},
     {"id":{"name":"obj_bad_end","path":"objects/obj_bad_end/obj_bad_end.yy",},},
+    {"id":{"name":"obj_blocker","path":"objects/obj_blocker/obj_blocker.yy",},},
     {"id":{"name":"obj_blood","path":"objects/obj_blood/obj_blood.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_burner_fire","path":"objects/obj_burner_fire/obj_burner_fire.yy",},},
@@ -91,6 +92,7 @@
     {"id":{"name":"snd_slime_with_player","path":"sounds/snd_slime_with_player/snd_slime_with_player.yy",},},
     {"id":{"name":"snd_spitter_attack","path":"sounds/snd_spitter_attack/snd_spitter_attack.yy",},},
     {"id":{"name":"spr_artifact","path":"sprites/spr_artifact/spr_artifact.yy",},},
+    {"id":{"name":"spr_blocker","path":"sprites/spr_blocker/spr_blocker.yy",},},
     {"id":{"name":"spr_blood","path":"sprites/spr_blood/spr_blood.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_city_tile","path":"sprites/spr_city_tile/spr_city_tile.yy",},},
