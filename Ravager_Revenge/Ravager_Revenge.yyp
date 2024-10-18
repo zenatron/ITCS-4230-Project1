@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Ravager_Revenge",
   "resources":[
@@ -63,6 +63,7 @@
     {"id":{"name":"obj_story","path":"objects/obj_story/obj_story.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"obj_win_tower","path":"objects/obj_win_tower/obj_win_tower.yy",},},
+    {"id":{"name":"p_elite_ravager_path","path":"paths/p_elite_ravager_path/p_elite_ravager_path.yy",},},
     {"id":{"name":"rm_bad_ending","path":"rooms/rm_bad_ending/rm_bad_ending.yy",},},
     {"id":{"name":"rm_fin","path":"rooms/rm_fin/rm_fin.yy",},},
     {"id":{"name":"rm_good_ending","path":"rooms/rm_good_ending/rm_good_ending.yy",},},

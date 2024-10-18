@@ -1,5 +1,9 @@
 // Evelyn Hosana - October 10th 2024 - ITCS 5230
+
 function scr_attack_pattern_3(){
+	obj_wall.solid = true;
+	path_end();
+	
 	if (player_distance > 32) {
 	    // chase player
 	    x += lengthdir_x(move_speed, player_direction);

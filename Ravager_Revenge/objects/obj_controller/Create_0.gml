@@ -1,5 +1,10 @@
 // Evelyn Hosana - September 26th 2024 - ITCS 5230
 
+// for drawing variables
+padding = 25;
+pos_x = 25;
+pos_y = 25;
+
 // initialize player kill count
 global.kill_count = 0;
 
