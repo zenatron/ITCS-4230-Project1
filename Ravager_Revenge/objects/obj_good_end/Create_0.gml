@@ -1,4 +1,4 @@
-// Evelyn Hosana - October 16th 2024 - ITCS 5230
+// Philip Vishnevsky
 
 // variables for controlling menu navigation
 menu_choice = 0; // 0 = Restart Game, 1 = Quit Game

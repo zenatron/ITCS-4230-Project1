@@ -1,4 +1,4 @@
-// Evelyn Hosana - October 16th 2024 - ITCS 5230
+// Philip Vishnevsky
 
 // moving up/down menu
 if (keyboard_check_pressed(ord("W"))) {

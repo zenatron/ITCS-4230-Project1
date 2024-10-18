@@ -1,7 +1,8 @@
 // if boss destroyed, end final battle music and play happy ending music
 audio_stop_sound(snd_boss_fight);
+if (!audio_is_playing(snd_enemy_death)) { audio_play_sound(snd_enemy_death, 1, false); }
 
-var artifact_spawn_radius = 0;
+var artifact_spawn_radius = 50;
 var spawn_pos = scr_find_valid_pos(artifact_spawn_radius);
 
 // check if valid position was found

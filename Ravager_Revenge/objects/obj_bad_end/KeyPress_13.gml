@@ -2,6 +2,7 @@
 
 switch (menu_choice) {
     case 0: // restart game
+		scr_reset_artifacts();
         room_goto(rm_level);
         break;
     case 1: // quit Game

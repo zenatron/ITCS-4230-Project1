@@ -32,6 +32,22 @@ global.mission_target_npc3 = 2; // Ravager Burners
 global.artifact_count = 0;
 global.artifacts_collected = [];
 
+// artifact movement settings
+global.artifact_move_speed = room_speed * 0.02; // movement speed for artifacts
+global.artifact_final_pos = [1664, 288];  // Target position for the combined artifact
+global.moving_artifacts = false;  // Are artifacts currently moving?
+global.artifact_combined = false;  // Is the combined artifact formed?
+global.artifacts_active = false;
+
+// Alarms to control timing
+alarm[0] = -1;  // This alarm starts the artifact movement
+alarm[1] = -1;  // This alarm handles the continuous movement of the sprites
+alarm[2] = -1;  // This alarm handles the room transition after displaying the combined artifact
+
+// Initial positions for artifacts, these positions correspond to the stationary display
+global.artifact_start_x = [1592, 1656, 1672, 1736];  // X positions for each artifact
+global.artifact_start_y = [552, 552, 552, 552];  // Y position is the same for all
+
 if (!variable_global_exists("available_frames")) {
     global.available_frames = [1, 2, 3]; // initial available frames for artifacts
 }

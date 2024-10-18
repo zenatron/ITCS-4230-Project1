@@ -1,3 +1,5 @@
+// Philip Vishnevsky
+
 // draw "Success!" text at top
 draw_set_color(c_maroon);
 draw_set_font(fnt_title);

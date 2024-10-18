@@ -11,3 +11,8 @@ if (keyboard_check_pressed(ord("O")) and !global.immortality) {
 	global.immortality = false
 	show_debug_message("!!!immortality disabled!!!")
 }
+
+// boss insta kill
+if (keyboard_check_pressed(ord("K"))) if (instance_exists(obj_elite_ravager)) { instance_destroy(obj_elite_ravager); }
+// spawners
+if (keyboard_check_pressed(ord("T"))) if (instance_exists(obj_spawner)) { instance_destroy(obj_spawner); }
