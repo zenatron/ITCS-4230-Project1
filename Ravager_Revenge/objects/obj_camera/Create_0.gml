@@ -4,6 +4,7 @@
 if (instance_exists(obj_player)) {
 	var player = instance_find(obj_player, 0);
 	player.can_move = false; // disable player movement initially
+	player.can_shoot = false; // disable shooting ability initially
 }
 
 // display resolution

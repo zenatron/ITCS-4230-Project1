@@ -73,6 +73,7 @@ switch (camera_state) {
 	    view_visible[0] = false;  // sisable zoomed view
 	    view_visible[1] = true;   // enable full-screen view
 	    obj_player.can_move = true; // re-enable player movement
+		obj_player.can_shoot = true; // re-enable player shooting
 	    camera_state = "normal_view"; // final state
 
 	    // reset zoom for next transition
