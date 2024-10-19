@@ -7,28 +7,29 @@ var cam_y = camera_get_view_y(camera);
 switch (camera_state) {
     case "wait_at_player":
         // wait at player for 1 second
-        var player_x = obj_player.x - RES_W / 2;
-        var player_y = obj_player.y - RES_H / 2;
+        var player_x = obj_player.x - (RES_W / ZOOM_LEVEL) / 2;
+        var player_y = obj_player.y - (RES_H / ZOOM_LEVEL) / 2;
         cam_x = player_x;
         cam_y = player_y;
+		
+		// apply initial zoom
+		camera_set_view_size(camera, RES_W / ZOOM_LEVEL, RES_H / ZOOM_LEVEL)
 
         // after 1 second, move camera to enemy
-        if (alarm[0] <= 0) {
-            camera_state = "zoom_to_enemy";
-        }
+        if (alarm[0] <= 0) { camera_state = "zoom_to_enemy"; }
         break;
 
     case "zoom_to_enemy":
         // target enemy position (middle center of room)
-	    var target_x = 960 - RES_W / 2;
-	    var target_y = 540 - RES_H / 2;
+	    var target_x = 1024 - (RES_W / ZOOM_LEVEL) / 2;
+        var target_y = 570 - (RES_H / ZOOM_LEVEL) / 2;
 
 	    // smoothly move camera to enemy
 	    cam_x = lerp(cam_x, target_x, CAM_SMOOTH);
 	    cam_y = lerp(cam_y, target_y, CAM_SMOOTH);
 
-	    // apply slight zoom-out effect to make sprite scaling more apparent
-	    camera_set_view_size(camera, RES_W * 1.1, RES_H * 1.1);
+	    // apply zoomed in camera
+		camera_set_view_size(camera, RES_W / ZOOM_LEVEL, RES_H / ZOOM_LEVEL);
 
 	    // check if camera has reached enemy
 	    if (abs(cam_x - target_x) < 2 and abs(cam_y - target_y) < 2) {
@@ -38,17 +39,14 @@ switch (camera_state) {
 	    break;
 
     case "enemy_animation":
-        if (animation_timer > 0) {
-            animation_timer -= 1;  // countdown timer for animation
-        } else {
-            camera_state = "pan_back_to_player";
-        }
+        if (animation_timer > 0) { animation_timer -= 1; } // countdown timer for animation
+        else { camera_state = "pan_back_to_player"; }
         break;
 
     case "pan_back_to_player":
         // target player position
-        var return_x = obj_player.x - RES_W / 2;
-        var return_y = obj_player.y - RES_H / 2;
+        var return_x = obj_player.x - (RES_W / ZOOM_LEVEL) / 2;
+        var return_y = obj_player.y - (RES_H / ZOOM_LEVEL) / 2;
 
         // smoothly move camera back to player
         cam_x = lerp(cam_x, return_x, CAM_SMOOTH);
@@ -62,22 +60,17 @@ switch (camera_state) {
         break;
 
     case "wait_before_reset":
-        if (alarm[1] <= 0) {
-            camera_state = "switch_to_full_resolution";
-        }
+        if (alarm[1] <= 0) { camera_state = "switch_to_full_resolution"; }
         break;
 
     case "switch_to_full_resolution":
         // resize camera and view to full resolution
-	    camera_set_view_size(camera, room_width, room_height);
+	    camera_set_view_size(camera, RES_W, RES_H);
 	    view_visible[0] = false;  // sisable zoomed view
 	    view_visible[1] = true;   // enable full-screen view
 	    obj_player.can_move = true; // re-enable player movement
 		obj_player.can_shoot = true; // re-enable player shooting
 	    camera_state = "normal_view"; // final state
-
-	    // reset zoom for next transition
-	    camera_set_view_size(camera, RES_W, RES_H);  // reset to normal zoom size after transition
 	    break;
 }
 

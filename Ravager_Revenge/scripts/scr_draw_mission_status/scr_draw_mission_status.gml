@@ -28,20 +28,23 @@ function scr_draw_mission_status(){
 
     // draw progress for each mission
     if (global.mission_assigned_npc1) {
+		draw_set_halign(fa_left);
         var mission_text = "Mission: Defeat " + string(global.mission_progress_npc1) + "/10\nRavager Crawlers";
-        scr_draw_wrapped_text(status_x + 90, status_y + 10, mission_text, 280, 2);
+        scr_draw_wrapped_text(status_x, status_y + 10, mission_text, 280, 2);
         status_y += 50;  // padding for next mission
     }
 
     if (global.mission_assigned_npc2) {
+		draw_set_halign(fa_left);
         var mission_text = "Mission: Defeat " + string(global.mission_progress_npc2) + "/5\nRavager Spitters";
-        scr_draw_wrapped_text(status_x + 90, status_y + 10, mission_text, 280, 2);
+        scr_draw_wrapped_text(status_x, status_y + 10, mission_text, 280, 2);
         status_y += 50;
     }
 
     if (global.mission_assigned_npc3) {
+		draw_set_halign(fa_left);
         var mission_text = "Mission: Defeat " + string(global.mission_progress_npc3) + "/2\nRavager Burners";
-        scr_draw_wrapped_text(status_x + 90, status_y + 10, mission_text, 280, 2);
+        scr_draw_wrapped_text(status_x, status_y + 10, mission_text, 280, 2);
         status_y += 50;
     }
 }

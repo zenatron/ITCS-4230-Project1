@@ -1,12 +1,13 @@
 // Evelyn Hosana - October 10th 2024 - ITCS 5230
+
 function scr_attack_pattern_1(){
-	if (player_distance < 450) {
-	    var away_direction = point_direction(obj_player.x, obj_player.y, x, y);
-	    x += lengthdir_x(move_speed - 2, away_direction);
-        y += lengthdir_y(move_speed - 2, away_direction);
-	}
+    // ensure path exists and boss is following it
+    if (path_index != p_elite_ravager_path) {
+		obj_wall.solid = false;
+        path_start(p_elite_ravager_path, 2, path_action_stop, false); // follow path with speed 2
+    }
 	
-	// spawn minions only during phase 1
+	// spawn minions during phase 1
     if (alarm[0] <= 0) {
         var minion_count = irandom_range(3, 5);
         for (var i = 0; i < minion_count; i++) {

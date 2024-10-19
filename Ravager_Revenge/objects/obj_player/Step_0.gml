@@ -147,3 +147,9 @@ with (obj_npc) {
         break;  // stop checking once we find active mission
     }
 }
+
+// Evan Stark - October 18th 2024 - ITCS 4230 001
+// Adjusting the max health when the player when using the Alt+L cheat.
+if (player_health > max_health) {
+	max_health = player_health;	
+}

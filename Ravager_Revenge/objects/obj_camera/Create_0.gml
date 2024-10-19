@@ -1,5 +1,13 @@
 // Evelyn Hosana - October 2nd 2024 - ITCS 5230
 
+// display resolution
+#macro RES_W 1920
+#macro RES_H 1080
+// set zoom
+#macro ZOOM_LEVEL 4
+// smoothen camera panning
+#macro CAM_SMOOTH 0.1
+
 // ensure player exists
 if (instance_exists(obj_player)) {
 	var player = instance_find(obj_player, 0);
@@ -7,35 +15,31 @@ if (instance_exists(obj_player)) {
 	player.can_shoot = false; // disable shooting ability initially
 }
 
-// display resolution
-#macro RES_W 480
-#macro RES_H 270
-#macro RES_SCALE 3
-
-#macro CAM_SMOOTH 0.1
+// ensure player exists
+if (instance_exists(obj_player)) {
+    var player = instance_find(obj_player, 0);
+    player.can_move = false;  // Disable player movement initially
+    player.can_shoot = false;  // Disable shooting ability initially
+}
 
 // enable views
 view_enabled = true;
 view_visible[0] = true;
 
-// create camera
-camera = camera_create_view(0, 0, RES_W, RES_H);
+// create camera (initially zoomed in to player at 1/4 resolution)
+camera = camera_create_view(0, 0, RES_W / ZOOM_LEVEL, RES_H / ZOOM_LEVEL);
 view_set_camera(0, camera);
-	
-// resize window & application surface
-window_set_size(RES_W * RES_SCALE, RES_H * RES_SCALE);
-surface_resize(application_surface, RES_W * RES_SCALE, RES_H * RES_SCALE);
+
+// resize window & application surface (maintain full resolution window)
+window_set_size(RES_W, RES_H);
+surface_resize(application_surface, RES_W, RES_H);
 
 // initialize variables to access display width and height
 display_width = display_get_width();
 display_height = display_get_height();
 
-window_width = RES_W * RES_SCALE;
-window_height = RES_H * RES_SCALE;
-
-window_set_position(display_width/2 - window_width/2, display_height/2 - window_height/2);
+window_set_position(display_width / 2 - RES_W / 2, display_height / 2 - RES_H / 2);
 
 // initial camera state
 camera_state = "wait_at_player";
-// activate alarm[0] after 1 second
-alarm[0] = room_speed * 1;
+alarm[0] = room_speed * 1;  // 1 second delay before transitioning to zooming

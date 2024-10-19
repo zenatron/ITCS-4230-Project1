@@ -6,7 +6,7 @@ if (!audio_is_playing(snd_slime_with_player)) { audio_play_sound(snd_slime_with_
 // check if player hasn't been damaged by slime in this collision
 if (!other.damaged_by_slime) {
 	other.player_health -= 30; // deal damage once
-	other.move_speed = 0.5; // apply slow effectd
+	other.move_speed = 1; // apply slow effectd
     // set flag to true so player doesn't take damage again until they leave slime
     other.damaged_by_slime = true;
 }
