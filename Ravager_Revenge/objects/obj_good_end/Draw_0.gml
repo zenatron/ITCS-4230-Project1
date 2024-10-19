@@ -14,8 +14,8 @@ var start_y = (room_height / 2) - (menu_height / 2); // start drawing from verti
 // draw menu options
 for (var i = 0; i < menu_count; i++) {
 	draw_set_font(fnt_body);
-    if (i == menu_choice) { draw_set_color(c_maroon); } // highlight selected option
-    else { draw_set_color(c_white); } // normal color for unselected options
+    if (i == menu_choice) { draw_set_color(c_white); } // highlight selected option
+    else { draw_set_color(c_maroon); } // normal color for unselected options
     // draw menu options at center
     draw_text(room_width / 2, start_y + i * menu_spacing, menu_options[i]);
 }
