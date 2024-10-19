@@ -1,9 +1,9 @@
 // Evelyn Hosana - October 16th 2024 - ITCS 5230
 
 // maximum enemy instances spawned
-crawler_max = 5; 
+crawler_max = 4; 
 spitter_max = 2;
-burner_max = 3;
+burner_max = 1;
 
 // tracking active enemy instances spawned
 crawler_count = 0;

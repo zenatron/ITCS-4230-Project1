@@ -30,7 +30,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.0.169",
   },
   "name":"Ravager_Revenge",
   "resources":[
@@ -90,6 +90,7 @@
     {"id":{"name":"snd_emitter","path":"sounds/snd_emitter/snd_emitter.yy",},},
     {"id":{"name":"snd_enemy_death","path":"sounds/snd_enemy_death/snd_enemy_death.yy",},},
     {"id":{"name":"snd_level_audio","path":"sounds/snd_level_audio/snd_level_audio.yy",},},
+    {"id":{"name":"snd_lose_music","path":"sounds/snd_lose_music/snd_lose_music.yy",},},
     {"id":{"name":"snd_menu_audio","path":"sounds/snd_menu_audio/snd_menu_audio.yy",},},
     {"id":{"name":"snd_player_damage","path":"sounds/snd_player_damage/snd_player_damage.yy",},},
     {"id":{"name":"snd_player_death","path":"sounds/snd_player_death/snd_player_death.yy",},},
@@ -98,6 +99,7 @@
     {"id":{"name":"snd_slime_with_bullet","path":"sounds/snd_slime_with_bullet/snd_slime_with_bullet.yy",},},
     {"id":{"name":"snd_slime_with_player","path":"sounds/snd_slime_with_player/snd_slime_with_player.yy",},},
     {"id":{"name":"snd_spitter_attack","path":"sounds/snd_spitter_attack/snd_spitter_attack.yy",},},
+    {"id":{"name":"snd_win_music","path":"sounds/snd_win_music/snd_win_music.yy",},},
     {"id":{"name":"spr_artifact","path":"sprites/spr_artifact/spr_artifact.yy",},},
     {"id":{"name":"spr_blocker","path":"sprites/spr_blocker/spr_blocker.yy",},},
     {"id":{"name":"spr_blood","path":"sprites/spr_blood/spr_blood.yy",},},

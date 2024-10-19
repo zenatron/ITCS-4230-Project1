@@ -17,6 +17,10 @@ draw_text(pos_x, pos_y + (padding * 5), "player health : " + string(obj_player.p
 draw_text(pos_x, pos_y + (padding * 6), "damage taken? : " + string(obj_player.damage_taken));
 draw_text(pos_x, pos_y + (padding * 7), "CHEAT-IMMORTALITY? : " + string(global.immortality));
 
+if (instance_exists(obj_bad_end)) {
+	draw_text(pos_x, pos_y + (padding * 8), "bad end menu choice " + string(obj_bad_end.menu_choice));
+}
+
 draw_set_halign(fa_right);
 // draw artifact pieces on screen if artifacts haven't been placed
 draw_text(display_get_width(), 950, "Artifact Pieces Collected : ");

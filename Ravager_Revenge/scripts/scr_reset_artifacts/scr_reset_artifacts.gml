@@ -8,6 +8,7 @@ function scr_reset_artifacts(){
 	global.moving_artifacts = false;
 	global.artifact_combined = false;
 	global.artifacts_active = false;
+	global.available_frames = [1, 2, 3];
 
 	// reset artifact starting positions
 	global.artifact_start_x = [1592, 1656, 1672, 1736];

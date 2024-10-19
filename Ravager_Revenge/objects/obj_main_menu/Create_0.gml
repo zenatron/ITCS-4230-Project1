@@ -7,4 +7,4 @@ show_credits = false;
 menu_locked = false;
 
 // play background music
-audio_play_sound(snd_menu_audio, 1, true);
+audio_play_sound(snd_menu_audio, 5, true);
