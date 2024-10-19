@@ -7,7 +7,10 @@ draw_self();
 draw_set_color(c_red);
 
 // draw detection radius as an outline (band)
-draw_circle(x, y, range, true);
+// Only in debug mode
+if (global.debugEnabled) {
+	draw_circle(x, y, range, true);
+}
 
 // only draw health bar if health is less than max_health
 if (enemy_health < max_health) {

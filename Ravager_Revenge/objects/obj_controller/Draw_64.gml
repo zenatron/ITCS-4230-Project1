@@ -4,27 +4,36 @@
 draw_set_font(-1);
 draw_set_color(c_white);
 
-// align variable drawing to right side of screen
-draw_set_halign(fa_left);
+function drawPlayerStats() {
+	// align variable drawing to right side of screen
+	draw_set_halign(fa_left);
 
-// Printing out the variables on the screen to see whats going on.
-draw_text(pos_x, pos_y, "Move speed : " + string(obj_player.move_speed));
-draw_text(pos_x, pos_y + padding, "x speed : " + string(obj_player.x_speed));
-draw_text(pos_x, pos_y + (padding * 2), "y speed : " + string(obj_player.y_speed));
-draw_text(pos_x, pos_y + (padding * 3), "x Position : " + string(obj_player.x));
-draw_text(pos_x, pos_y + (padding * 4), "y Position : " + string(obj_player.y));
-draw_text(pos_x, pos_y + (padding * 5), "player health : " + string(obj_player.player_health));
-draw_text(pos_x, pos_y + (padding * 6), "damage taken? : " + string(obj_player.damage_taken));
-draw_text(pos_x, pos_y + (padding * 7), "CHEAT-IMMORTALITY? : " + string(global.immortality));
+	// Printing out the variables on the screen to see whats going on.
+	draw_text(pos_x, pos_y, "Move speed : " + string(obj_player.move_speed));
+	draw_text(pos_x, pos_y + padding, "x speed : " + string(obj_player.x_speed));
+	draw_text(pos_x, pos_y + (padding * 2), "y speed : " + string(obj_player.y_speed));
+	draw_text(pos_x, pos_y + (padding * 3), "x Position : " + string(obj_player.x));
+	draw_text(pos_x, pos_y + (padding * 4), "y Position : " + string(obj_player.y));
+	draw_text(pos_x, pos_y + (padding * 5), "player health : " + string(obj_player.player_health));
+	draw_text(pos_x, pos_y + (padding * 6), "damage taken? : " + string(obj_player.damage_taken));
+	draw_text(pos_x, pos_y + (padding * 7), "CHEAT-IMMORTALITY? : " + string(global.immortality));
 
-if (instance_exists(obj_bad_end)) {
-	draw_text(pos_x, pos_y + (padding * 8), "bad end menu choice " + string(obj_bad_end.menu_choice));
+	if (instance_exists(obj_bad_end)) {
+		draw_text(pos_x, pos_y + (padding * 8), "bad end menu choice " + string(obj_bad_end.menu_choice));
+	}
 }
 
-draw_set_halign(fa_right);
-// draw artifact pieces on screen if artifacts haven't been placed
-draw_text(display_get_width(), 950, "Artifact Pieces Collected : ");
-draw_text(display_get_width() - 20, 1050, "Kill Count : " + string(global.kill_count));
+function drawArtifactStats() {
+	draw_set_halign(fa_right);
+	// draw artifact pieces on screen if artifacts haven't been placed
+	draw_text(display_get_width(), 950, "Artifact Pieces Collected : ");
+	draw_text(display_get_width() - 20, 1050, "Kill Count : " + string(global.kill_count));
+}
+
+if (global.debugEnabled) {
+	drawPlayerStats();
+	drawArtifactStats();
+}
 
 // get GUI dimensions
 var gui_width = display_get_gui_width();

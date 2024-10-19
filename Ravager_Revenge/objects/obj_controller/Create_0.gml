@@ -5,6 +5,10 @@ padding = 25;
 pos_x = 25;
 pos_y = 25;
 
+// show debug menu
+global.debugEnabled = false;
+
+
 // initialize player kill count
 global.kill_count = 0;
 
