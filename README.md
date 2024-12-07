@@ -1,7 +1,7 @@
 # Ravager Revenge
 Created by ByteBattalion
 
-Team Members: Evan Stark, Evelyn Hosana, Philip Vishnevsky
+Team Members: Evan Stark, Evelyn Hosana, and Philip Vishnevsky
 
 ## INSTRUCTIONS
 Players will use the basic WASD control scheme to move around the game world.  Other important controls include pressing the E button close to an NPC to interact with them and pressing the Enter key to go through their messages, and using the mouse to aim your gun and shoot bullets using the left mouse button. 
