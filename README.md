@@ -16,12 +16,20 @@ Once the player collects all 3 artifact pieces that spawn during the main level,
 
 Once the boss is defeated, it drops the final artifact piece for the player to collect and unlocks the city center to the right of the boss’ spawn point, where if the player has all 4 artifact pieces which are visible at the bottom right of the screen, approach the tower and interact with ‘E’, the artifact is combined and plays a sound, then the player wins and the screen displays a final game over (good ending) prompt.
 
+## Installation
+1. Download the GameMaker project.
+2. Open it in GameMaker 2.
+3. Compile and run the game.
+
 ## CHEAT CODES
    * ALT+R: Restarts the current room.
    * ALT+G: Restarts the game.
    * ALT+L: Increases player health by 50.
    * ALT+N: Moves to the next room.
    * ALT+O: Toggles immortality on/off with debug message.
+
+## Contribution
+As this project is not in active development, contributions are not accepted.
 
 ## WORKS USED
 * Ravager, Minion, Blood, Spitter Bullet & NPC Sprites: https://sethbb.itch.io/32rogues
